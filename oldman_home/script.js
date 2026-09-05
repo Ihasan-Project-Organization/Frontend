@@ -19,9 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modal Logic
     const openModalBtn = document.getElementById('open-new-request-modal');
+    const editAndRepostBtn = document.querySelector('.edit-and-repost');
     const prevBtn = document.getElementById('modal-prev-btn');
     const nextBtn = document.getElementById('modal-next-btn');
     const modalOverlay = document.getElementById('new-request-modal');
+    const modalTitle = document.querySelector('.modal-title');
     const modalOptions = document.querySelectorAll('.modal-option');
     
     // Steps
@@ -34,8 +36,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentStep = 1;
     let selectedOption = null;
+    let isEditAndRepostMode = false;
+
+    // My requests tabs
+    const requestTabs = document.querySelectorAll('.tab-btn[data-tab]');
+    const activeRequests = document.getElementById('active-requests');
+    const requestsEmptyState = document.querySelector('.requests-empty-state');
+    const actionRequiredRequests = document.getElementById('action-required-requests');
+    const completedRequests = document.getElementById('completed-requests');
+    const cancelledRequests = document.getElementById('cancelled-requests');
+
+    requestTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            requestTabs.forEach((item) => item.classList.toggle('active', item === tab));
+
+            const selectedTab = tab.dataset.tab;
+            const showAllRequests = selectedTab === 'all';
+            const showActiveRequests = selectedTab === 'active';
+            const showActionRequired = selectedTab === 'action-required';
+            const showCompleted = selectedTab === 'completed';
+            const showCancelled = selectedTab === 'cancelled';
+            if (activeRequests) activeRequests.hidden = !showActiveRequests;
+            if (actionRequiredRequests) actionRequiredRequests.hidden = !showActionRequired;
+            if (completedRequests) completedRequests.hidden = !showCompleted;
+            if (cancelledRequests) cancelledRequests.hidden = !showCancelled;
+            if (requestsEmptyState) requestsEmptyState.hidden = !showAllRequests;
+        });
+    });
+
+    const actionCard = document.querySelector('.action-required-card');
+    const confirmRequest = document.querySelector('.confirm-request');
+    const cancelRequest = document.querySelector('.cancel-request');
+
+    if (confirmRequest && actionCard) {
+        confirmRequest.addEventListener('click', () => {
+            actionCard.innerHTML = `
+                <div class="action-card-accent" style="background:#5a8027"></div>
+                <div class="action-alert" style="background:#e7f2d7;color:#45671c">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div><strong>تم تأكيد الموعد بنجاح</strong><p>سيصلك إشعار عند انطلاق مقدم الخدمة.</p></div>
+                </div>`;
+        });
+    }
+
+    if (cancelRequest && actionCard) {
+        cancelRequest.addEventListener('click', () => {
+            actionCard.innerHTML = `
+                <div class="action-card-accent" style="background:#8a8a80"></div>
+                <div class="action-alert" style="background:#f1f1ef;color:#666">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div><strong>تم إلغاء الطلب</strong><p>يمكنك إرسال طلب مساعدة جديد في أي وقت.</p></div>
+                </div>`;
+        });
+    }
 
     function resetModal() {
+        isEditAndRepostMode = false;
         currentStep = 1;
         step1.style.display = 'block';
         step2.style.display = 'none';
@@ -45,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         prevBtn.textContent = 'الغاء';
         prevBtn.className = 'modal-btn cancel-btn';
         nextBtn.textContent = 'التالي';
+        if (modalTitle) modalTitle.textContent = 'طلب مساعدة جديد';
         modalOptions.forEach(opt => opt.classList.remove('selected'));
         selectedOption = null;
         
@@ -65,8 +122,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Edit and repost uses the request-details step directly, with its own actions.
+    if (editAndRepostBtn && modalOverlay) {
+        editAndRepostBtn.addEventListener('click', () => {
+            resetModal();
+            isEditAndRepostMode = true;
+            step1.style.display = 'none';
+            step2.style.display = 'block';
+            stepper2.classList.add('active');
+            prevBtn.textContent = 'تراجع';
+            nextBtn.textContent = 'إعادة نشر الطلب';
+            currentStep = 2;
+            modalOverlay.classList.add('show');
+        });
+    }
+
     if (prevBtn && modalOverlay) {
         prevBtn.addEventListener('click', () => {
+            if (isEditAndRepostMode) {
+                modalOverlay.classList.remove('show');
+                return;
+            }
+
             if (currentStep === 1) {
                 // Cancel
                 modalOverlay.classList.remove('show');
@@ -128,6 +205,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
+            if (isEditAndRepostMode) {
+                modalOverlay.classList.remove('show');
+                return;
+            }
+
             if (currentStep === 1) {
                 if (!selectedOption) {
                     alert('الرجاء اختيار نوع المساعدة أولاً');

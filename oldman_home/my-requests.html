@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>طلباتي - احسان</title>
-    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- google font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,10 +64,6 @@
         <main class="main-content">
             <!-- Header -->
             <header class="top-header">
-                <div class="search-bar">
-                    <input type="text" placeholder="ابحث عن اي شئ">
-                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                </div>
                 <div class="header-notification">
                     <i class="fa-regular fa-bell"></i>
                     <span class="notification-badge">2</span>
@@ -93,19 +89,161 @@
 
             <div class="tabs-container">
                 <div class="tabs">
-                    <button class="tab-btn active">الكل</button>
-                    <button class="tab-btn">نشطة</button>
-                    <button class="tab-btn">مكتملة</button>
+                    <button class="tab-btn active" data-tab="all">الكل</button>
+                    <button class="tab-btn" data-tab="active">نشطة</button>
+                    <button class="tab-btn" data-tab="action-required">بحاجة لإجراء</button>
+                    <button class="tab-btn" data-tab="completed">مكتملة</button>
+                    <button class="tab-btn" data-tab="cancelled">ملغاة</button>
                 </div>
                 <div class="tabs-line"></div>
             </div>
 
             <!-- Placeholder for requests list -->
             <div class="requests-list">
-                <div class="status-card" style="margin-top: 30px;">
+                <div class="status-card requests-empty-state" style="margin-top: 30px;">
                     <i class="fa-solid fa-clipboard-list status-icon" style="color: #cbd5e0;"></i>
                     <h4 style="color: var(--text-muted);">لا توجد طلبات لعرضها حالياً</h4>
                 </div>
+
+                <div class="active-requests" id="active-requests" hidden>
+                    <article class="active-request-card">
+                        <div class="request-card-top">
+                            <span class="request-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                            <div>
+                                <h3>شراء أغراض</h3>
+                                <span>رقم الطلب: REQ-1045</span>
+                            </div>
+                        </div>
+                        <span class="request-state waiting">بانتظار قبول مقدم الخدمة</span>
+                        <div class="request-meta"><span><i class="fa-regular fa-calendar"></i> غداً، ١١:٠٠ صباحاً</span><span><i class="fa-solid fa-location-dot"></i> حي النخيل</span></div>
+                        <p class="request-description">طلبك منشور حالياً لمقدمي الخدمة المناسبين</p>
+                    </article>
+
+                    <article class="active-request-card confirmed-card">
+                        <div class="request-card-top">
+                            <span class="request-icon"><i class="fa-solid fa-user-group"></i></span>
+                            <div>
+                                <h3>زيارة اجتماعية</h3>
+                                <span>رقم الطلب: REQ-1044</span>
+                            </div>
+                        </div>
+                        <span class="request-state confirmed">تم قبول الطلب</span>
+                        <div class="request-meta"><span><i class="fa-regular fa-calendar"></i> اليوم، ٥:١٥ مساءً</span><span><i class="fa-solid fa-user"></i> مقدم الخدمة: أحمد محمود</span></div>
+                        <p class="request-description">تم تأكيد الزيارة، وسيصلك إشعار عند بدء مقدم الخدمة بالطريق.</p>
+                    </article>
+
+                    <article class="active-request-card in-progress-card">
+                        <div class="request-card-top">
+                            <span class="request-icon"><i class="fa-solid fa-briefcase-medical"></i></span>
+                            <div>
+                                <h3>مرافقة للمستشفى</h3>
+                                <span>رقم الطلب: REQ-1040</span>
+                            </div>
+                        </div>
+                        <span class="request-state progress">قيد التنفيذ</span>
+                        <div class="request-meta"><span><i class="fa-regular fa-calendar"></i> اليوم، ٩:١٥ صباحاً</span><span><i class="fa-solid fa-user"></i> مقدم الخدمة: أحمد محمود</span></div>
+                        <p class="request-description">مقدم الخدمة في طريقه إليك الآن.</p>
+                    </article>
+                </div>
+
+                <!-- Requests that need a confirmation from the user -->
+                <section class="action-required-requests" id="action-required-requests" hidden aria-live="polite">
+                    <article class="action-required-card">
+                        <div class="action-card-accent"></div>
+                        <div class="action-card-heading">
+                            <span class="request-lock" aria-hidden="true"><i class="fa-solid fa-lock"></i></span>
+                            <div class="action-request-info">
+                                <span class="request-number">#REQ-3034</span>
+                                <h2>مساعدة منزلية</h2>
+                                <p>أحتاج مساعدة في ترتيب وتنظيف الاحتياجات المنزلية.</p>
+                            </div>
+                        </div>
+
+                        <div class="action-request-details">
+                            <span><i class="fa-regular fa-calendar"></i> الأربعاء 24 ديسمبر، 3:00 مساءً</span>
+                            <span><i class="fa-solid fa-location-dot"></i> حي النخيل، شارع صلاح</span>
+                        </div>
+
+                        <div class="action-alert">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <div>
+                                <strong>بانتظارك اتخاذ إجراء</strong>
+                                <p>يرجى تأكيد الموعد أو تعديله قبل بدء الخدمة.</p>
+                            </div>
+                        </div>
+
+                        <div class="action-card-footer">
+                            <button class="action-button schedule-and-repost" type="button"><i class="fa-solid fa-calendar-plus"></i> تعيين موعد جديد وإعادة النشر</button>
+                            <button class="action-button edit-and-repost" type="button">تعديل وإعادة النشر</button>
+                            <button class="action-button cancel-request" type="button"><i class="fa-regular fa-circle-xmark"></i> إلغاء الطلب</button>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="completed-requests" id="completed-requests" hidden aria-live="polite">
+                    <article class="completed-request-card">
+                        <div class="completed-card-top">
+                            <div class="completed-title">
+                                <span class="completed-icon green"><i class="fa-solid fa-square-plus"></i></span>
+                                <div><h2>مرافقة طبية</h2><p>موعد في مستشفى الملك فيصل التخصصي</p></div>
+                            </div>
+                            <span class="completed-badge"><i class="fa-solid fa-circle-check"></i> مكتمل</span>
+                        </div>
+                        <div class="completed-meta"><span><i class="fa-regular fa-calendar"></i><b>تاريخ الانتهاء</b> 15 أكتوبر 2023 - 10:30 صباحاً</span><span><i class="fa-solid fa-user"></i><b>المتطوع</b> عبدالله</span></div>
+                        <button class="rate-button" type="button"><i class="fa-solid fa-star"></i> قيّم المتطوع</button>
+                    </article>
+
+                    <article class="completed-request-card">
+                        <div class="completed-card-top">
+                            <div class="completed-title">
+                                <span class="completed-icon beige"><i class="fa-solid fa-cart-shopping"></i></span>
+                                <div><h2>تسوق مقاضي</h2><p>شراء مستلزمات من السوبرماركت</p></div>
+                            </div>
+                            <span class="completed-badge"><i class="fa-solid fa-circle-check"></i> مكتمل</span>
+                        </div>
+                        <div class="completed-meta"><span><i class="fa-regular fa-calendar"></i><b>تاريخ الانتهاء</b> 10 أكتوبر 2023 - 04:00 مساءً</span><span><i class="fa-solid fa-user"></i><b>المتطوع</b> فاطمة علي</span></div>
+                        <div class="rated-row"><span class="stars">★★★★★</span><span>لقد قمت بتقييم هذه الخدمة</span></div>
+                    </article>
+                </section>
+
+                <section class="cancelled-requests" id="cancelled-requests" hidden aria-live="polite">
+                    <article class="cancelled-request-card">
+                        <header class="cancelled-card-header">
+                            <div class="cancelled-request-info">
+                                <span class="cancelled-icon" aria-hidden="true"><i class="fa-solid fa-hospital"></i></span>
+                                <div>
+                                    <h2>توصيل للمستشفى</h2>
+                                    <span class="cancelled-request-id">REQ-0984</span>
+                                </div>
+                            </div>
+                            <span class="cancelled-status"><i class="fa-solid fa-circle-xmark"></i> ملغاة</span>
+                        </header>
+                    </article>
+                    <article class="cancelled-request-card">
+                        <header class="cancelled-card-header">
+                            <div class="cancelled-request-info">
+                                <span class="cancelled-icon" aria-hidden="true"><i class="fa-solid fa-cart-shopping"></i></span>
+                                <div>
+                                    <h2>شراء أغراض</h2>
+                                    <span class="cancelled-request-id">REQ-1021</span>
+                                </div>
+                            </div>
+                            <span class="cancelled-status"><i class="fa-solid fa-circle-xmark"></i> ملغاة</span>
+                        </header>
+                    </article>
+                    <article class="cancelled-request-card">
+                        <header class="cancelled-card-header">
+                            <div class="cancelled-request-info">
+                                <span class="cancelled-icon" aria-hidden="true"><i class="fa-solid fa-toolbox"></i></span>
+                                <div>
+                                    <h2>صيانة منزلية</h2>
+                                    <span class="cancelled-request-id">REQ-0855</span>
+                                </div>
+                            </div>
+                            <span class="cancelled-status"><i class="fa-solid fa-circle-xmark"></i> ملغاة</span>
+                        </header>
+                    </article>
+                </section>
             </div>
 
         </main>
@@ -162,11 +300,11 @@
             <div id="step-2" style="display: none;">
                 <div class="input-group">
                     <label>اشرح ما تحتاجه</label>
-                    <input type="text" id="req-desc" placeholder="مثال احتاج دواء الضغط من الصيدلية الشفاء">
+                    <input type="text" id="req-desc" placeholder="مثال: احتاج دواء الضغط من الصيدلية الشفاء">
                 </div>
                 <div class="input-group">
-                    <label>متى تحتاجين المساعدة؟</label>
-                    <input type="text" id="req-time" placeholder="في اقرب وقت">
+                    <label>أقصى موعد لتنفيذ الخدمة</label>
+                    <input type="datetime-local" id="req-time">
                 </div>
                 <div class="input-group">
                     <label>العنوان</label>
