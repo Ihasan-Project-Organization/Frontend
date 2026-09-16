@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#263d00">
+  <title>إحسان | لوحة التحكم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span class="icon icon-heart">♥</span><span class="icon icon-hand">⌒</span></div>
+        <span class="brand-name">إحسان</span>
+      </div>
+
+      <nav class="side-nav" aria-label="القائمة الرئيسية">
+        <a class="nav-item active" href="#"><span>الرئيسية</span><span class="nav-icon">⌂</span></a>
+        <a class="nav-item" href="#orders"><span>الطلبات القادمة</span><span class="nav-icon">☷</span><b class="nav-badge">6</b></a>
+        <a class="nav-item" href="#my-orders"><span>طلباتي</span><span class="nav-icon">▣</span></a>
+        <a class="nav-item" href="#performance"><span>الأداء والتقييم</span><span class="nav-icon">⌁</span></a>
+        <a class="nav-item notice-link" href="#notifications"><span>الإشعارات</span><span class="nav-icon">♧</span><i></i></a>
+        <a class="nav-item" href="#settings"><span>التوفير والإعدادات</span><span class="nav-icon">☷</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="help-box">
+          <strong>هل تحتاج إلى مساعدة؟</strong>
+          <span>فريق الدعم جاهز لخدمتك دائماً</span>
+          <button type="button" class="support-btn">تواصل مع الدعم</button>
+        </div>
+        <button type="button" class="logout-btn">تسجيل الخروج <span>↪</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة">☰</button>
+        <div class="profile">
+          <div class="avatar provider-avatar" aria-label="مقدم الخدمة"><span class="provider-symbol" aria-hidden="true"></span><i></i></div>
+          <div class="profile-copy"><strong>محمد أحمد</strong><span>آخر تسجيل دخول: 09:24 ص</span></div>
+          <div class="member-pill">عضو خدمة متميز</div>
+        </div>
+        <button class="notification-button" type="button" aria-label="الإشعارات">♧<i></i></button>
+      </header>
+
+      <div class="content-wrap available-content">
+        <section class="available-heading">
+          <div><h1>الطلبات المتاحة</h1><p>طلبات يمكنك خدمتها ومساعدة أصحابها</p></div>
+          <label class="search-box"><span>⌕</span><input type="search" placeholder="ابحث في الطلبات..." aria-label="البحث في الطلبات"></label>
+        </section>
+
+        <section class="available-grid" id="orders" aria-label="الطلبات المتاحة">
+          <article class="available-card"><div class="card-top"><div><h2>شراء أغراض منزلية</h2><small>التسوق والتوصيل</small></div><span class="request-type cart">▱</span><b>1.8 كم ◷</b></div><p>شراء أغراض يومية وفقاً لقائمة محددة من المنزل</p><div class="card-meta"><span>جدة، السعودية</span><span>اليوم 4:30 م</span><span>مدة متوقعة: ساعة</span></div><div class="card-note">ⓘ يرجى التأكد من توفر الأغراض وإبلاغنا بعد إتمام الطلب</div><div class="card-actions"><button class="accept-btn" type="button">قبول الطلب</button><button class="details-btn" type="button">عرض التفاصيل</button><button class="decline-btn" type="button">تجاوز</button></div></article>
+          <article class="available-card"><div class="card-top"><div><h2>مرافقة إلى موعد طبي</h2><small>دعم وتيسير</small></div><span class="request-type person">♙</span><b>2.8 كم ◷</b></div><p>مرافقة المستفيد إلى عيادته للذهاب والعودة إلى المنزل</p><div class="card-meta"><span>جدة، السعودية</span><span>غداً 9:00 ص</span><span>مدة متوقعة: ساعتان</span></div><div class="card-note">ⓘ يرجى التواصل مع المستفيد قبل الموعد</div><div class="card-actions"><button class="accept-btn" type="button">قبول الطلب</button><button class="details-btn" type="button">عرض التفاصيل</button><button class="decline-btn" type="button">تجاوز</button></div></article>
+          <article class="available-card"><div class="card-top"><div><h2>إحضار دواء</h2><small>التوصيل السريع</small></div><span class="request-type medicine">⌕</span><b>3.1 كم ◷</b></div><p>استلام وصفة وإحضار الدواء من الصيدلية</p><div class="card-meta"><span>جدة، السعودية</span><span>اليوم 6:00 م</span><span>مدة متوقعة: ساعة</span></div><div class="card-note">ⓘ يرجى التأكد من الوصفة قبل استلام الطلب</div><div class="card-actions"><button class="accept-btn" type="button">قبول الطلب</button><button class="details-btn" type="button">عرض التفاصيل</button><button class="decline-btn" type="button">تجاوز</button></div></article>
+          <article class="available-card"><div class="card-top"><div><h2>مساعدة منزلية خفيفة</h2><small>التنظيف والترتيب</small></div><span class="request-type home">⌂</span><b>4.5 كم ◷</b></div><p>ترتيب بعض الأغراض التي يصعب الوصول إليها</p><div class="card-meta"><span>جدة، السعودية</span><span>غداً 11:00 ص</span><span>مدة متوقعة: ساعتان</span></div><div class="card-note">ⓘ يرجى التواصل مع المستفيد قبل الموعد</div><div class="card-actions"><button class="accept-btn" type="button">قبول الطلب</button><button class="details-btn" type="button">عرض التفاصيل</button><button class="decline-btn" type="button">تجاوز</button></div></article>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="scrim" id="scrim"></div>
+  <script src="script2.js"></script>
+</body>
+</html>

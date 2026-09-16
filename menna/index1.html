@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#263d00">
+  <title>إحسان | لوحة التحكم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span class="icon icon-heart">♥</span><span class="icon icon-hand">⌒</span></div>
+        <span class="brand-name">إحسان</span> 
+      </div>
+
+
+      <nav class="side-nav" aria-label="القائمة الرئيسية">
+        <a class="nav-item active" href="#"><span>الرئيسية</span><span class="nav-icon">⌂</span></a>
+        <a class="nav-item" href="#orders"><span>الطلبات القادمة</span><span class="nav-icon">☷</span><b class="nav-badge">6</b></a>
+        <a class="nav-item" href="#my-orders"><span>طلباتي</span><span class="nav-icon">▣</span></a>
+        <a class="nav-item" href="#performance"><span>الأداء والتقييم</span><span class="nav-icon">⌁</span></a>
+        <a class="nav-item notice-link" href="#notifications"><span>الإشعارات</span><span class="nav-icon">♧</span><i></i></a>
+        <a class="nav-item" href="#settings"><span>التوفير والإعدادات</span><span class="nav-icon">☷</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="help-box">
+          <strong>هل تحتاج إلى مساعدة؟</strong>
+          <span>فريق الدعم جاهز لخدمتك دائماً</span>
+          <button type="button" class="support-btn">تواصل مع الدعم</button>
+        </div>
+        <button type="button" class="logout-btn">تسجيل الخروج <span>↪</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة">☰</button>
+        <div class="profile">
+          <div class="avatar provider-avatar" aria-label="مقدم الخدمة"><span class="provider-symbol" aria-hidden="true"></span><i></i></div>
+          <div class="profile-copy"><strong>محمد أحمد</strong><span>آخر تسجيل دخول: 09:24 ص</span></div>
+          <div class="member-pill">عضو خدمة متميز</div>
+        </div>
+        <button class="notification-button" type="button" aria-label="الإشعارات">♧<i></i></button>
+      </header>
+
+      <div class="content-wrap">
+        <section class="welcome-section">
+          <h1>مرحباً محمد <span>👋</span></h1>
+          <p>تابع طلباتك وخدماتك اليوم وجهودك اليومية من مكان واحد</p>
+        </section>
+
+        <section class="status-banner" aria-label="حالة العطاء">
+          <div class="status-copy"><span class="status-dot"></span><strong>العطاء يبدأ بخطوة</strong><small>اجعل عطائك اليوم سبباً في إسعاد الآخرين</small></div>
+          <div class="deadline"><span>موعد التمام بعد</span><strong>45 دقيقة</strong></div>
+        </section>
+
+        <section class="stats-grid" aria-label="الإحصائيات">
+          <article class="stat-card"><div class="stat-icon star">★</div><div><span>متوسط التقييم</span><strong>4.8 <small>/ 5.0</small></strong></div></article>
+          <article class="stat-card"><div class="stat-icon done">●</div><div><span>خدمة مكتملة</span><strong>36</strong></div></article>
+          <article class="stat-card"><div class="stat-icon calendar">▦</div><div><span>خدمات هذا الأسبوع</span><strong>2</strong></div></article>
+          <article class="stat-card"><div class="stat-icon hand">♨</div><div><span>طلبات متاحة حالياً</span><strong>6</strong></div></article>
+        </section>
+
+        <section class="dashboard-grid">
+          <article class="panel activity-panel" id="notifications">
+            <div class="panel-heading"><h2>نشاط اليوم</h2><a href="#">كل النشاطات</a></div>
+            <div class="activity-list">
+              <div class="activity-row"><span class="activity-icon green">✓</span><div><strong>قبلت طلب إغاثة منزلية</strong><small>منذ 15 دقيقة</small></div></div>
+              <div class="activity-row"><span class="activity-icon gold">★</span><div><strong>تم تقييم خدمتك من فاطمة</strong><small>منذ ساعة</small></div></div>
+              <div class="activity-row"><span class="activity-icon blue">◷</span><div><strong>تذكير بموعد: محافظة جدة 9:00 ص</strong><small>غداً</small></div></div>
+            </div>
+          </article>
+
+          <article class="panel request-panel" id="orders">
+            <div class="panel-heading"><h2>طلبات اليوم</h2><span class="available"><i></i> متاح للتطوع</span></div>
+            <div class="request-body">
+              <div class="request-icon">♜</div>
+              <div class="request-info"><h3>مساعدة أغراض منزلية</h3><p>مساعدة أساسية في المنزل القريب</p><div class="request-meta"><span>جدة، السعودية</span><span>اليوم 10:30 ص</span><span class="reward">المسافة التقريبية 45 دقيقة</span></div></div>
+            </div>
+            <div class="request-actions"><button class="accept-btn" type="button">قبول التطوع <span>←</span></button><button class="details-btn" type="button">عرض التفاصيل</button><button class="decline-btn" type="button">الاعتذار عن الطلب</button></div>
+          </article>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="scrim" id="scrim"></div>
+  <script src="script.js"></script>
+</body>
+</html>

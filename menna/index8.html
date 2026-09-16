@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#263d00">
+  <title>إحسان | الإشعارات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style8.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <span class="icon icon-heart">♥</span>
+          <span class="icon icon-hand">⌒</span>
+        </div>
+        <span class="brand-name">إحسان</span>
+      </div>
+
+      <nav class="side-nav" aria-label="القائمة الرئيسية">
+        <a class="nav-item" href="index1.html">
+          <span>الرئيسية</span>
+          <span class="nav-icon">⌂</span>
+        </a>
+        <a class="nav-item notice-link" href="index2.html">
+          <span>الطلبات المتاحة</span>
+          <span class="nav-icon">☷</span>
+          <i class="dot-indicator"></i>
+        </a>
+        <a class="nav-item" href="index5.html">
+          <span>طلباتي</span>
+          <span class="nav-icon">▣</span>
+        </a>
+        <a class="nav-item" href="index7.html">
+          <span>الأداء والتقييم</span>
+          <span class="nav-icon">⌁</span>
+        </a>
+        <a class="nav-item active notice-link" href="index8.html">
+          <span>الإشعارات</span>
+          <span class="nav-icon">♧</span>
+          <i class="active-dot-green"></i>
+        </a>
+        <a class="nav-item" href="#settings">
+          <span>التوفير والإعدادات</span>
+          <span class="nav-icon">☷</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="help-box">
+          <strong>هل تحتاج إلى مساعدة؟</strong>
+          <span>فريق الدعم متاح لخدمتك دائماً</span>
+          <button type="button" class="support-btn">تواصل مع الدعم</button>
+        </div>
+        <button type="button" class="logout-btn">تسجيل الخروج <span>↪</span></button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Topbar Header -->
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة">☰</button>
+        <div class="profile">
+          <button type="button" class="bell-btn" aria-label="الإشعارات">
+            <span class="bell-icon">♧</span>
+            <span class="bell-dot"></span>
+          </button>
+          <div class="avatar user-avatar" aria-label="صورة مقدم الخدمة">
+            <span class="avatar-letter">م</span>
+          </div>
+          <div class="profile-copy">
+            <strong>محمد أحمد</strong>
+            <span class="provider-subtitle">مقدم خدمة معتمد</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Wrapper -->
+      <div class="content-wrap notifications-wrap">
+        <!-- Page Title Section -->
+        <section class="notifications-header">
+          <h1>الإشعارات</h1>
+          <p>كل تحديثات الطلبات والمواعيد في مكان واحد</p>
+
+          <!-- Filter Tabs -->
+          <div class="filter-tabs" role="tablist" aria-label="تصفية الإشعارات">
+            <button class="tab-btn active" data-filter="all" role="tab" aria-selected="true">الكل</button>
+            <button class="tab-btn" data-filter="orders" role="tab">الطلبات</button>
+            <button class="tab-btn" data-filter="ratings" role="tab">التقييمات</button>
+            <button class="tab-btn" data-filter="system" role="tab">النظام</button>
+          </div>
+        </section>
+
+        <!-- Notifications List Container -->
+        <section class="notifications-list" id="notificationsContainer">
+          
+          <!-- Item 1: طلب جديد قريب منك -->
+          <article class="notification-card" data-category="orders">
+            <div class="notification-main">
+              <div class="notif-icon-wrap icon-green-dot">
+                <span class="dot-symbol">🟢</span>
+              </div>
+              <div class="notif-content">
+                <h2>طلب جديد قريب منك</h2>
+                <p>طلب شراء أغراض في حي الرمال، اليوم الساعة 4:30 مساءً</p>
+              </div>
+            </div>
+            <div class="notif-time">منذ 5 دقائق</div>
+          </article>
+
+          <!-- Item 2: موعدك بعد 45 دقيقة -->
+          <article class="notification-card" data-category="orders">
+            <div class="notification-main">
+              <div class="notif-icon-wrap icon-orange-clock">
+                <span class="clock-symbol">⏰</span>
+              </div>
+              <div class="notif-content">
+                <h2>موعدك بعد 45 دقيقة</h2>
+                <p>تأكد من بدء التوجه إلى طلب شراء الأغراض رقم #1048</p>
+              </div>
+            </div>
+            <div class="notif-time">منذ 12 دقيقة</div>
+          </article>
+
+          <!-- Item 3: حصلت على تقييم جديد -->
+          <article class="notification-card" data-category="ratings">
+            <div class="notification-main">
+              <div class="notif-icon-wrap icon-gold-star">
+                <span class="star-symbol">★</span>
+              </div>
+              <div class="notif-content">
+                <h2>حصلت على تقييم جديد</h2>
+                <p>قيمك المستفيد بخمس نجوم لخدمة المرافقة</p>
+              </div>
+            </div>
+            <div class="notif-time">أمس</div>
+          </article>
+
+          <!-- Item 4: تم تأكيد إكتمال الخدمة -->
+          <article class="notification-card" data-category="orders">
+            <div class="notification-main">
+              <div class="notif-icon-wrap icon-green-check">
+                <span class="check-symbol">✓</span>
+              </div>
+              <div class="notif-content">
+                <h2>تم تأكيد إكتمال الخدمة</h2>
+                <p>أكد المستفيد إكتمال طلب إحضار الدواء رقم #1037</p>
+              </div>
+            </div>
+            <div class="notif-time">أمس</div>
+          </article>
+
+          <!-- Item 5: تحديث مؤشر الالتزام -->
+          <article class="notification-card" data-category="system">
+            <div class="notification-main">
+              <div class="notif-icon-wrap icon-emerald-shield">
+                <span class="shield-symbol">🛡️</span>
+              </div>
+              <div class="notif-content">
+                <h2>تحديث مؤشر الالتزام</h2>
+                <p>ارتفع مؤشر التزامك إلى 92% بعد إتمام الخدمة في الموعد</p>
+              </div>
+            </div>
+            <div class="notif-time">25 أغسطس</div>
+          </article>
+
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="scrim" id="scrim"></div>
+  <script src="script8.js"></script>
+</body>
+</html>

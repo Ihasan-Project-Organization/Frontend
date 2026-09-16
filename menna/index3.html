@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#263d00">
+  <title>إحسان | طلباتي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <span class="icon icon-heart">♥</span>
+          <span class="icon icon-hand">⌒</span>
+        </div>
+        <span class="brand-name">إحسان</span>
+      </div>
+
+      <nav class="side-nav" aria-label="القائمة الرئيسية">
+        <a class="nav-item" href="index1.html">
+          <span>الرئيسية</span>
+          <span class="nav-icon">⌂</span>
+        </a>
+        <a class="nav-item notice-link" href="index2.html">
+          <span>الطلبات المتاحة</span>
+          <span class="nav-icon">☷</span>
+          <i class="dot-indicator"></i>
+        </a>
+        <a class="nav-item active" href="index3.html">
+          <span>طلباتي</span>
+          <span class="nav-icon">▣</span>
+        </a>
+        <a class="nav-item" href="#performance">
+          <span>الأداء والتقييم</span>
+          <span class="nav-icon">⌁</span>
+        </a>
+        <a class="nav-item notice-link" href="#notifications">
+          <span>الإشعارات</span>
+          <span class="nav-icon">♧</span>
+        </a>
+        <a class="nav-item" href="#settings">
+          <span>التوفير والإعدادات</span>
+          <span class="nav-icon">☷</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="help-box">
+          <strong>هل تحتاج إلى مساعدة؟</strong>
+          <span>فريق الدعم متاح لخدمتك دائماً</span>
+          <button type="button" class="support-btn">تواصل مع الدعم</button>
+        </div>
+        <button type="button" class="logout-btn">تسجيل الخروج <span>↪</span></button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Topbar Header -->
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة">☰</button>
+        <div class="profile">
+          <div class="avatar-badge-wrap">
+            <div class="avatar user-avatar" aria-label="صورة مقدم الخدمة">
+              <span class="avatar-letter">م</span>
+            </div>
+            <span class="avatar-num-badge">1</span>
+          </div>
+          <div class="profile-copy">
+            <strong>محمد أحمد</strong>
+            <span class="provider-subtitle">مقدم خدمة معتمد</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Wrapper -->
+      <div class="content-wrap my-orders-wrap">
+        <!-- Page Title Section -->
+        <section class="orders-header">
+          <h1>طلباتي</h1>
+          <p>إدارة الطلبات القادمة والجارية ومتابعة تأكيد كبار السن</p>
+          
+          <!-- Filter Tabs -->
+          <div class="filter-tabs" role="tablist" aria-label="تصفية الطلبات">
+            <button class="tab-btn active" data-filter="all" role="tab" aria-selected="true">الكل</button>
+            <button class="tab-btn" data-filter="upcoming" role="tab">القادمة</button>
+            <button class="tab-btn" data-filter="in-progress" role="tab">قيد التنفيذ</button>
+            <button class="tab-btn" data-filter="pending-confirmation" role="tab">بانتظار التأكيد</button>
+            <button class="tab-btn" data-filter="completed" role="tab">المكتملة</button>
+          </div>
+        </section>
+
+        <!-- Orders Cards Container -->
+        <section class="orders-list" id="ordersContainer">
+          
+          <!-- Card 1: شراء أغراض منزلية -->
+          <article class="order-card" data-category="upcoming">
+            <div class="card-header">
+              <span class="status-badge status-accepted">• تم القبول</span>
+              <div class="card-title-group">
+                <div class="title-meta">
+                  <h2>شراء أغراض منزلية <small class="order-id">طلب رقم #1048</small></h2>
+                  <div class="location-time">
+                    <span>📍 حي الرمال - شارع الوحدة</span>
+                    <span class="dot-separator">•</span>
+                    <span>⏰ 10:30 ص اليوم</span>
+                  </div>
+                </div>
+                <div class="card-icon icon-cart" aria-hidden="true">🛒</div>
+              </div>
+            </div>
+
+            <!-- Stepper Timeline -->
+            <div class="stepper-wrap">
+              <div class="stepper-line">
+                <div class="stepper-progress" style="width: 0%;"></div>
+              </div>
+              <div class="stepper-steps">
+                <div class="step-item step-done">
+                  <div class="step-icon">✓</div>
+                  <span class="step-label">تم القبول</span>
+                </div>
+                <div class="step-item">
+                  <div class="step-icon"></div>
+                  <span class="step-label">قيد التنفيذ</span>
+                </div>
+                <div class="step-item">
+                  <div class="step-icon"></div>
+                  <span class="step-label">بانتظار التأكيد</span>
+                </div>
+                <div class="step-item">
+                  <div class="step-icon"></div>
+                  <span class="step-label">مكتمل</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Actions -->
+            <div class="card-actions-bar">
+              <div class="action-buttons">
+                <button type="button" class="btn btn-primary start-btn">بدء التنفيذ</button>
+                <button type="button" class="btn btn-secondary">تواصل مع المستفيد</button>
+              </div>
+              <button type="button" class="btn-cancel">الاعتذار عن الطلب</button>
+            </div>
+          </article>
+
+          <!-- Card 2: مرافقة إلى موعد طبي -->
+          <article class="order-card" data-category="in-progress">
+            <div class="card-header">
+              <span class="status-badge status-in-progress">• قيد التنفيذ</span>
+              <div class="card-title-group">
+                <div class="title-meta">
+                  <h2>مرافقة إلى موعد طبي <small class="order-id">طلب رقم #1041</small></h2>
+                  <div class="location-time">
+                    <span>📍 عيادة الشفاء</span>
+                    <span class="dot-separator">•</span>
+                    <span>⏰ بدأت 9:12 ص اليوم</span>
+                  </div>
+                </div>
+                <div class="card-icon icon-person" aria-hidden="true">👤</div>
+              </div>
+            </div>
+
+            <!-- Stepper Timeline -->
+            <div class="stepper-wrap">
+              <div class="stepper-line">
+                <div class="stepper-progress" style="width: 33.33%;"></div>
+              </div>
+              <div class="stepper-steps">
+                <div class="step-item step-done">
+                  <div class="step-icon">✓</div>
+                  <span class="step-label">تم القبول</span>
+                </div>
+                <div class="step-item step-active">
+                  <div class="step-icon">✓</div>
+                  <span class="step-label">قيد التنفيذ</span>
+                </div>
+                <div class="step-item">
+                  <div class="step-icon"></div>
+                  <span class="step-label">بانتظار التأكيد</span>
+                </div>
+                <div class="step-item">
+                  <div class="step-icon"></div>
+                  <span class="step-label">مكتمل</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Actions -->
+            <div class="card-actions-bar">
+              <div class="action-buttons">
+                <button type="button" class="btn btn-primary complete-btn">إنهاء الخدمة</button>
+                <button type="button" class="btn btn-secondary">إضافة ملاحظة</button>
+                <button type="button" class="btn btn-secondary">الدعم</button>
+              </div>
+              <button type="button" class="btn-cancel">الاعتذار</button>
+            </div>
+          </article>
+
+          <!-- Card 3: إحضار دواء -->
+          <article class="order-card" data-category="pending-confirmation">
+            <div class="card-header">
+              <span class="status-badge status-pending">• بانتظار تأكيد كبير السن</span>
+              <div class="card-title-group">
+                <div class="title-meta">
+                  <h2>إحضار دواء <small class="order-id">طلب رقم #1037</small></h2>
+                  <div class="location-time">
+                    <span>📍 تل الهوى</span>
+                    <span class="dot-separator">•</span>
+                    <span>⏰ انتهت 5:20 م أمس</span>
+                  </div>
+                </div>
+                <div class="card-icon icon-medicine" aria-hidden="true">🧪</div>
+              </div>
+            </div>
+
+            <!-- Card Actions -->
+            <div class="card-actions-bar">
+              <div class="action-buttons">
+                <button type="button" class="btn btn-secondary">عرض ملخص التنفيذ</button>
+                <button type="button" class="btn btn-secondary">تواصل مع الدعم</button>
+              </div>
+              <button type="button" class="btn-cancel">الاعتذار</button>
+            </div>
+          </article>
+
+          <!-- Card 4: مساعدة منزلية خفيفة -->
+          <article class="order-card" data-category="completed">
+            <div class="card-header">
+              <span class="status-badge status-completed">• مكتمل</span>
+              <div class="card-title-group">
+                <div class="title-meta">
+                  <h2>مساعدة منزلية خفيفة <small class="order-id">طلب رقم #1029</small></h2>
+                  <div class="location-time">
+                    <span>📍 حي النصر</span>
+                    <span class="dot-separator">•</span>
+                    <span>⏰ 11:00 ص - 24 أغسطس 2026</span>
+                  </div>
+                </div>
+                <div class="card-icon icon-home" aria-hidden="true">🏠</div>
+              </div>
+            </div>
+          </article>
+
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="scrim" id="scrim"></div>
+  <script src="script3.js"></script>
+</body>
+</html>
