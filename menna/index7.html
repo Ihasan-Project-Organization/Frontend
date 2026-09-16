@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#263d00">
+  <title>إحسان | الأداء والتقييم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style7.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <span class="icon icon-heart">♥</span>
+          <span class="icon icon-hand">⌒</span>
+        </div>
+        <span class="brand-name">إحسان</span>
+      </div>
+
+      <nav class="side-nav" aria-label="القائمة الرئيسية">
+        <a class="nav-item" href="index1.html">
+          <span>الرئيسية</span>
+          <span class="nav-icon">⌂</span>
+        </a>
+        <a class="nav-item notice-link" href="index2.html">
+          <span>الطلبات المتاحة</span>
+          <span class="nav-icon">☷</span>
+          <i class="dot-indicator"></i>
+        </a>
+        <a class="nav-item" href="index5.html">
+          <span>طلباتي</span>
+          <span class="nav-icon">▣</span>
+        </a>
+        <a class="nav-item active" href="index7.html">
+          <span>الأداء والتقييم</span>
+          <span class="nav-icon">⌁</span>
+        </a>
+        <a class="nav-item notice-link" href="#notifications">
+          <span>الإشعارات</span>
+          <span class="nav-icon">♧</span>
+        </a>
+        <a class="nav-item" href="#settings">
+          <span>التوفير والإعدادات</span>
+          <span class="nav-icon">☷</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="help-box">
+          <strong>هل تحتاج إلى مساعدة؟</strong>
+          <span>فريق الدعم متاح لخدمتك دائماً</span>
+          <button type="button" class="support-btn">تواصل مع الدعم</button>
+        </div>
+        <button type="button" class="logout-btn">تسجيل الخروج <span>↪</span></button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Topbar Header -->
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة">☰</button>
+        <div class="profile">
+          <div class="avatar-badge-wrap">
+            <div class="avatar user-avatar" aria-label="صورة مقدم الخدمة">
+              <span class="avatar-letter">م</span>
+            </div>
+            <span class="avatar-num-badge">3</span>
+          </div>
+          <div class="profile-copy">
+            <strong>محمد أحمد</strong>
+            <span class="provider-subtitle">مقدم خدمة معتمد</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Wrapper -->
+      <div class="content-wrap performance-wrap">
+        <!-- Page Title Section -->
+        <section class="performance-header">
+          <h1>الأداء والتقييم</h1>
+          <p>صورة واضحة عن جودة خدماتك ومدى التزامك</p>
+        </section>
+
+        <!-- Main Performance Overview Card -->
+        <section class="performance-main-card">
+          <!-- Right Side: Rating Summary Box -->
+          <div class="rating-summary-box">
+            <span class="rating-box-subtitle">تقييم المستفيدين</span>
+            <div class="rating-number">4.8</div>
+            <div class="rating-stars" aria-label="تقييم 4.8 من 5">
+              ★★★★★
+            </div>
+            <span class="rating-count">بناءً على 29 تقييماً من 36 خدمة</span>
+          </div>
+
+          <!-- Left Side: Performance Metrics Bars -->
+          <div class="metrics-bars-wrap">
+            <!-- Metric 1: نقاط الالتزام -->
+            <div class="metric-row">
+              <div class="metric-info">
+                <span class="metric-name">نقاط الالتزام</span>
+                <span class="metric-score">92/100</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" style="width: 92%;"></div>
+              </div>
+            </div>
+
+            <!-- Metric 2: الحضور في الموعد -->
+            <div class="metric-row">
+              <div class="metric-info">
+                <span class="metric-name">الحضور في الموعد</span>
+                <span class="metric-score">94%</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" style="width: 94%;"></div>
+              </div>
+            </div>
+
+            <!-- Metric 3: إكمال الطلبات المقبولة -->
+            <div class="metric-row">
+              <div class="metric-info">
+                <span class="metric-name">إكمال الطلبات المقبولة</span>
+                <span class="metric-score">97%</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" style="width: 97%;"></div>
+              </div>
+            </div>
+
+            <!-- Metric 4: معدل سرعة الاستجابة -->
+            <div class="metric-row">
+              <div class="metric-info">
+                <span class="metric-name">معدل سرعة الاستجابة</span>
+                <span class="metric-score">88%</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats Metric Grid (4 Cards) -->
+        <section class="stats-metric-grid">
+          <div class="stat-box">
+            <div class="stat-icon-wrap icon-green">
+              <span>✓</span>
+            </div>
+            <div class="stat-copy">
+              <strong class="stat-val">36</strong>
+              <span class="stat-lbl">خدمة مكتملة</span>
+            </div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-icon-wrap icon-blue">
+              <span>⏰</span>
+            </div>
+            <div class="stat-copy">
+              <strong class="stat-val">34</strong>
+              <span class="stat-lbl">في الموعد</span>
+            </div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-icon-wrap icon-orange">
+              <span>↩</span>
+            </div>
+            <div class="stat-copy">
+              <strong class="stat-val">2</strong>
+              <span class="stat-lbl">اعتذاران</span>
+            </div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-icon-wrap icon-gold">
+              <span>★</span>
+            </div>
+            <div class="stat-copy">
+              <strong class="stat-val">24</strong>
+              <span class="stat-lbl">تقييم 5 نجوم</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recent Reviews Section -->
+        <section class="reviews-section">
+          <div class="reviews-header">
+            <h2>آخر آراء المستفيدين</h2>
+            <a href="#" class="view-all-link">عرض الكل</a>
+          </div>
+
+          <div class="reviews-grid">
+            <!-- Review Card 1 -->
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">متعاون جداً ووصل في الموعد، شكراً على حسن التعامل</p>
+              <div class="review-footer">
+                <span class="review-service">خدمة شراء أغراض</span>
+                <span class="review-date">28 أغسطس 2026</span>
+              </div>
+            </article>
+
+            <!-- Review Card 2 -->
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">تجربة ممتازة، شرح كل خطوة وساعدني حتى نهاية الموعد</p>
+              <div class="review-footer">
+                <span class="review-service">خدمة مرافقة</span>
+                <span class="review-date">24 أغسطس 2026</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <div class="scrim" id="scrim"></div>
+  <script src="script7.js"></script>
+</body>
+</html>

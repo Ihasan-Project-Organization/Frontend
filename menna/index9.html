@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#263d00">
+  <title>إحسان | التوفر والإعدادات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style9.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <span class="icon icon-heart">♥</span>
+          <span class="icon icon-hand">⌒</span>
+        </div>
+        <span class="brand-name">إحسان</span>
+      </div>
+
+      <nav class="side-nav" aria-label="القائمة الرئيسية">
+        <a class="nav-item" href="index1.html">
+          <span>الرئيسية</span>
+          <span class="nav-icon">⌂</span>
+        </a>
+        <a class="nav-item notice-link" href="index2.html">
+          <span>الطلبات المتاحة</span>
+          <span class="nav-icon">☷</span>
+          <i class="dot-indicator"></i>
+        </a>
+        <a class="nav-item" href="index5.html">
+          <span>طلباتي</span>
+          <span class="nav-icon">▣</span>
+        </a>
+        <a class="nav-item" href="index7.html">
+          <span>الأداء والتقييم</span>
+          <span class="nav-icon">⌁</span>
+        </a>
+        <a class="nav-item notice-link" href="index8.html">
+          <span>الإشعارات</span>
+          <span class="nav-icon">♧</span>
+        </a>
+        <a class="nav-item active" href="index9.html">
+          <span>التوفر والإعدادات</span>
+          <span class="nav-icon">⚙️</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="help-box">
+          <strong>هل تحتاج إلى مساعدة؟</strong>
+          <span>فريق الدعم متاح لخدمتك دائماً</span>
+          <button type="button" class="support-btn">تواصل مع الدعم</button>
+        </div>
+        <button type="button" class="logout-btn">تسجيل الخروج <span>↪</span></button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Topbar Header -->
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة">☰</button>
+        <div class="profile">
+          <button type="button" class="bell-btn" aria-label="الإشعارات">
+            <span class="bell-icon">♧</span>
+            <span class="bell-dot"></span>
+          </button>
+          <div class="avatar user-avatar" aria-label="صورة مقدم الخدمة">
+            <span class="avatar-letter">م</span>
+          </div>
+          <div class="profile-copy">
+            <strong>محمد أحمد</strong>
+            <span class="provider-subtitle">مقدم خدمة معتمد</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Wrapper -->
+      <div class="content-wrap settings-wrap">
+        <!-- Page Title Section -->
+        <section class="settings-header">
+          <h1>التوفر والإعدادات</h1>
+          <p>حدد متى وأين ترغب في تقديم الخدمات</p>
+        </section>
+
+        <!-- Settings Cards Grid -->
+        <div class="settings-grid">
+          
+          <!-- Card 1: جدول التوفر الأسبوعي -->
+          <section class="settings-card">
+            <h2>جدول التوفر الأسبوعي</h2>
+
+            <!-- Working Days Selection -->
+            <div class="form-group">
+              <label class="form-label">أيام العمل</label>
+              <div class="days-pills-wrap">
+                <button type="button" class="day-pill active">السبت</button>
+                <button type="button" class="day-pill active">الأحد</button>
+                <button type="button" class="day-pill active">الاثنين</button>
+                <button type="button" class="day-pill active">الثلاثاء</button>
+                <button type="button" class="day-pill active">الأربعاء</button>
+                <button type="button" class="day-pill">الخميس</button>
+                <button type="button" class="day-pill">الجمعة</button>
+              </div>
+            </div>
+
+            <!-- Time Inputs Row -->
+            <div class="time-inputs-row">
+              <div class="form-group flex-1">
+                <label class="form-label" for="timeFrom">من الساعة</label>
+                <div class="input-with-icon">
+                  <span class="input-icon">⏰</span>
+                  <input type="text" id="timeFrom" value="08:00 AM" readonly>
+                </div>
+              </div>
+
+              <div class="form-group flex-1">
+                <label class="form-label" for="timeTo">إلى الساعة</label>
+                <div class="input-with-icon">
+                  <span class="input-icon">⏰</span>
+                  <input type="text" id="timeTo" value="06:00 PM" readonly>
+                </div>
+              </div>
+            </div>
+
+            <!-- Temporary Status Dropdown -->
+            <div class="form-group">
+              <label class="form-label" for="tempStatus">حالة مؤقتة</label>
+              <div class="select-wrap">
+                <select id="tempStatus">
+                  <option value="schedule" selected>متاح حسب الجدول</option>
+                  <option value="busy">مشغول مؤقتاً</option>
+                  <option value="off">غير متاح اليوم</option>
+                </select>
+                <span class="select-arrow">˅</span>
+              </div>
+            </div>
+
+            <!-- Card Actions Footer -->
+            <div class="card-footer-action">
+              <button type="button" class="btn btn-save" id="saveScheduleBtn">حفظ جدول التوفر</button>
+            </div>
+          </section>
+
+          <!-- Card 2: الخدمات والمنطقة -->
+          <section class="settings-card">
+            <h2>الخدمات والمنطقة</h2>
+
+            <!-- Offered Services Checklist -->
+            <div class="form-group">
+              <label class="form-label">الخدمات التي أقدمها</label>
+              <div class="services-grid">
+                <label class="service-checkbox-btn checked">
+                  <input type="checkbox" checked hidden>
+                  <span class="custom-checkbox">✓</span>
+                  <span class="service-name">شراء أغراض</span>
+                </label>
+
+                <label class="service-checkbox-btn checked">
+                  <input type="checkbox" checked hidden>
+                  <span class="custom-checkbox">✓</span>
+                  <span class="service-name">مرافقة</span>
+                </label>
+
+                <label class="service-checkbox-btn checked">
+                  <input type="checkbox" checked hidden>
+                  <span class="custom-checkbox">✓</span>
+                  <span class="service-name">إحضار دواء</span>
+                </label>
+
+                <label class="service-checkbox-btn">
+                  <input type="checkbox" hidden>
+                  <span class="custom-checkbox"></span>
+                  <span class="service-name">مساعدة منزلية</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Service Region Dropdown -->
+            <div class="form-group">
+              <label class="form-label" for="serviceRegion">منطقة الخدمة</label>
+              <div class="select-wrap">
+                <select id="serviceRegion">
+                  <option value="gaza" selected>مدينة غزة</option>
+                  <option value="north">شمال غزة</option>
+                  <option value="middle">المحافظة الوسطى</option>
+                  <option value="khan">خانيونس</option>
+                  <option value="rafah">رفح</option>
+                </select>
+                <span class="select-arrow">˅</span>
+              </div>
+            </div>
+
+            <!-- Service Radius Dropdown -->
+            <div class="form-group">
+              <label class="form-label" for="serviceRadius">نطاق الخدمة</label>
+              <div class="select-wrap">
+                <select id="serviceRadius">
+                  <option value="5" selected>حتى 5 كم</option>
+                  <option value="10">حتى 10 كم</option>
+                  <option value="15">حتى 15 كم</option>
+                  <option value="20">حتى 20 كم</option>
+                </select>
+                <span class="select-arrow">˅</span>
+              </div>
+            </div>
+
+            <!-- Card Actions Footer -->
+            <div class="card-footer-action">
+              <button type="button" class="btn btn-save" id="saveServicesBtn">حفظ التعديلات</button>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="scrim" id="scrim"></div>
+  <script src="script9.js"></script>
+</body>
+</html>
